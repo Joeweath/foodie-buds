@@ -11,7 +11,7 @@ const foodieSchema = new Schema({
     enum: ["Breakfast", "Lunch", "Dinner"],
   },
   // ingredients: { type: Schema.Types.ObjectId, ref: "Ingredient" },
-  profile: { type: Schema.Types.ObjectId, ref: "Profile" },
+  owner: { type: Schema.Types.ObjectId, ref: "Profile" },
 });
 
 const Foodie = mongoose.model("Foodie", foodieSchema);

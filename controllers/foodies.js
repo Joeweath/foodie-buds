@@ -15,20 +15,12 @@ function index(req, res) {
 }
 
 function newFood(req, res) {
-  req.body.owner = req.user.profile._id;
-  Foodie.create(req.body)
-    .then((foodie) => {
-      res.render("foodies/new", {
-        title: "Add Meal",
-      });
-    })
-    .catch((err) => {
-      res.redirect("/foodies");
-    });
+  res.render("foodies/new", {
+    title: "Add meal",
+  });
 }
 
 function create(req, res) {
-  console.log("Hello im joe");
   req.body.owner = req.user.profile._id;
   Foodie.create(req.body)
     .then((foodie) => {
@@ -41,7 +33,7 @@ function create(req, res) {
 
 function show(req, res) {
   Foodie.findById(req.params.id)
-    .populate("profile")
+    .populate("owner")
     .then((foodie) => {
       res.render("foodies/show", {
         foodie,
@@ -50,4 +42,18 @@ function show(req, res) {
     });
 }
 
-export { index, newFood as new, create, show };
+function edit(req, res) {
+  Foodie.findById(req.params.id)
+    .then((foodie) => {
+      res.render("foodies/edit", {
+        foodie,
+        title: "edit 🚧",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/foodies");
+    });
+}
+
+export { index, newFood as new, create, show, edit };
