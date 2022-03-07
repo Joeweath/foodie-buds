@@ -8,6 +8,7 @@ import logger from "morgan";
 import methodOverride from "method-override";
 import passport from "passport";
 import { passUserToView } from "./middleware/middleware.js";
+import { router as profileRouter } from "./routes/profiles.js";
 
 // connect to MongoDB with mongoose
 import("./config/database.js");
@@ -64,6 +65,7 @@ app.use(passUserToView);
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/foodies", foodiesRouter);
+app.use("/profiles", profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

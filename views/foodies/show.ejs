@@ -16,7 +16,9 @@
     </form>
   <% } %>
 </section>
+<% if (foodie.owner.equals(user?.profile._id)) { %>
 <form action="/foodies/<%= foodie._id %>?_method=DELETE" method="POST">
   <button class="btn" type="submit">Delete this Meal</button>
 </form>
+<% } %>
 <%- include('../partials/footer') %>
