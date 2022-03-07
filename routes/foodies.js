@@ -7,6 +7,7 @@ const router = Router();
 router.get("/", foodiesCtrl.index);
 router.get("/new", isLoggedIn, foodiesCtrl.new);
 router.get("/:id", foodiesCtrl.show);
+router.get("/:id/edit", isLoggedIn, foodiesCtrl.edit);
 
 router.post("/", foodiesCtrl.create);
 
