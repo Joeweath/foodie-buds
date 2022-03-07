@@ -1,16 +1,27 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
+  <a href="/foodies"><h1>Foodie Buds</h1></a>
+  <% if (!user) { %>
+    <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
+</head>
+<body>
+  <nav>
+    
+    <% if (user) { %>
+      <a href="/auth/logout">Logout 👋</a>
+    <% } else { %>
+      <a href="/auth/google" class="siwg-link">
+        <button type="submit" class="siwg">
+          <img id="siwg-image" alt="Sign in with Google" />
+        </button>
+      </a>
+    <% } %>
+  </nav>
+  
+
 </main>
 
 <%- include('./partials/footer') %>

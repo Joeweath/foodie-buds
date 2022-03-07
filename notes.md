@@ -4,7 +4,9 @@
 </head>
 <body>
   <nav>
-      <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %></h4>
+    <a href="/foodies"></a>
+    <a href="/profiles"></a>
+      <h4>hello, <%= user ? user.profile.name : "friend" %></h4>
       <% if (user?.profile.avatar) { %>
         <div>
           <img
