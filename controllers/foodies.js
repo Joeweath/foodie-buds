@@ -56,4 +56,46 @@ function edit(req, res) {
     });
 }
 
-export { index, newFood as new, create, show, edit };
+function update(req, res) {
+  Foodie.findById(req.params.id)
+    .then((food) => {
+      if (food.owner.equals(req.user.profile._id)) {
+        food.updateOne(req.body, { new: true }).then(() => {
+          res.redirect(`/foodies/${food._id}`);
+        });
+      } else {
+        throw new Error("🚫 Not authorized 🚫");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect(`/foodies`);
+    });
+}
+
+function deleteTaco(req, res) {
+  Foodie.findById(req.params.id)
+    .then((food) => {
+      if (food.owner.equals(req.user.profile._id)) {
+        food.delete().then(() => {
+          res.redirect("/foodies");
+        });
+      } else {
+        throw new Error("🚫 Not authorized 🚫");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/foodies");
+    });
+}
+
+export {
+  index,
+  newFood as new,
+  create,
+  show,
+  edit,
+  update,
+  deleteTaco as delete,
+};

@@ -11,4 +11,8 @@ router.get("/:id/edit", isLoggedIn, foodiesCtrl.edit);
 
 router.post("/", foodiesCtrl.create);
 
+router.delete("/:id", isLoggedIn, foodiesCtrl.delete);
+
+router.put("/:id", isLoggedIn, foodiesCtrl.update);
+
 export { router };

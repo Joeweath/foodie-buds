@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <h1>Edit your meal!</h1>
-    <form action="/foodies/<%= foodie._id %>"_method=PUT method="POST">
+    <form action="/foodies/<%= foodie._id %>?_method=PUT" method="POST">
       <label>
         Add a link of the picture of your tasty meal here:
         <input type="text" name="meal" value="<%= foodie.meal %>" autocomplete="off">
