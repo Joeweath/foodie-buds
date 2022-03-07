@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Something is smelling GOOD!!</h1>
+  <img src="<%= foodie.meal %>" alt="">
+  <h5><%= foodie.description %></h5>
+  <ul>
+    <li>Ingridents: <%= foodie.ingridents %> </li>
+    <li>
+      Directions: <%= foodie.directions%>
+    </li>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>

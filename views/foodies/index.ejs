@@ -10,19 +10,24 @@
         <input type="text" name="meal" autocomplete="off">
       </label>
       <label>
-        What's the Name?:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label>
         Description:
         <input type="text" name="description" autocomplete="off">
+      </label>
+      <label>
+        Ingridents:
+        <input type="text" name="ingridents" autocomplete="off">
+      </label>
+      <label>
+        Directions:
+        <input type="text" name="directions" autocomplete="off">
       </label>
       <button type="submit">POST</button>
     </form>
 	<ul>
   <% foodies.forEach(food => { %>
-    <img src="<%= food.meal %>" alt=""> 
-    <li> <%= food.name %>  <%= food.description %></li>
+    <a href="/foodies/<%= food._id %>"><img src="<%= food.meal %>" alt="" width="500" height="500"></a> 
+    <li><img src="<%= user.profile.avatar %>" alt="" width="10" height="10">  
+       <%= food.description %></li>
   <% }) %>
   </ul>
 </section>

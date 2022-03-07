@@ -26,4 +26,15 @@ function create(req, res) {
     });
 }
 
-export { index, create };
+function show(req, res) {
+  Foodie.findById(req.params.id)
+    .populate("owner")
+    .then((foodie) => {
+      res.render("foodies/show", {
+        foodie,
+        title: "Food 😋",
+      });
+    });
+}
+
+export { index, create, show };

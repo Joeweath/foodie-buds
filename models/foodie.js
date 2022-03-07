@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const foodieSchema = new Schema({
-  name: String,
-  recipe: String,
+  direction: String,
   meal: String,
   description: String,
   chowTime: {
