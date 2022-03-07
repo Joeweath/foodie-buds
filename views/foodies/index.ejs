@@ -3,26 +3,6 @@
 
 <section>
   <h1>Food!😋</h1>
-    <h2>Add your meal!</h2>
-    <form action="/foodies" method="POST">
-      <label>
-        Add a link of the picture of your tasty meal here:
-        <input type="text" name="meal" autocomplete="off">
-      </label>
-      <label>
-        Description:
-        <input type="text" name="description" autocomplete="off">
-      </label>
-      <label>
-        Ingridents:
-        <input type="text" name="ingridents" autocomplete="off">
-      </label>
-      <label>
-        Directions:
-        <input type="text" name="directions" autocomplete="off">
-      </label>
-      <button type="submit">POST</button>
-    </form>
 	<ul>
   <% foodies.forEach(food => { %>
     <a href="/foodies/<%= food._id %>"><img src="<%= food.meal %>" alt="" width="500" height="500"></a> 

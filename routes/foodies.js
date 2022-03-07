@@ -5,8 +5,9 @@ import { isLoggedIn } from "../middleware/middleware.js";
 const router = Router();
 
 router.get("/", foodiesCtrl.index);
+router.get("/new", isLoggedIn, foodiesCtrl.new);
 router.get("/:id", foodiesCtrl.show);
 
-router.post("/", isLoggedIn, foodiesCtrl.create);
+router.post("/", foodiesCtrl.create);
 
 export { router };

@@ -1,9 +1,12 @@
-  <% if (!user) { %>
+<script src="https://kit.fontawesome.com/7ba2214bf9.js" crossorigin="anonymous"></script>
+ <% if (!user) { %>
     <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
 </head>
 <body>
-  <nav>
+  <nav>  
+    <a href="/foodies"><i class="fa-solid fa-house"></i></a>
+     <a href="/foodies/new"><i class="fa-solid fa-circle-plus">Add your Meal</i></a>
       <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %></h4>
       <% if (user?.profile.avatar) { %>
         <div>

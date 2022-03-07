@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>Add your meal!</h1>
+    <form action="/foodies" method="POST">
+      <label>
+        Add a link of the picture of your tasty meal here:
+        <input type="text" name="meal" autocomplete="off">
+      </label>
+      <label>
+        Description:
+        <input type="text" name="description" autocomplete="off">
+      </label>
+      <label>
+        Directions:
+        <input type="text" name="directions" autocomplete="off">
+      </label>
+      <button type="submit">POST</button>
+    </form>
+
+    <%- include('../partials/footer') %>

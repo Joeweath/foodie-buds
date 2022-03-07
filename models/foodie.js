@@ -10,7 +10,7 @@ const foodieSchema = new Schema({
     type: String,
     enum: ["Breakfast", "Lunch", "Dinner"],
   },
-  ingrident: { type: Schema.Types.ObjectId, ref: "Ingrident" },
+  // ingredients: { type: Schema.Types.ObjectId, ref: "Ingredient" },
   profile: { type: Schema.Types.ObjectId, ref: "Profile" },
 });
 
