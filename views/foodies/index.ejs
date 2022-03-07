@@ -21,7 +21,7 @@
     </form>
 	<ul>
   <% foodies.forEach(food => { %>
-    <%= food.meal %> 
+    <img src="<%= food.meal %>" alt=""> 
     <li> <%= food.name %>  <%= food.description %></li>
   <% }) %>
   </ul>
