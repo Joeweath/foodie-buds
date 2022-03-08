@@ -90,6 +90,15 @@ function deleteTaco(req, res) {
     });
 }
 
+function createReview(req, res) {
+  Foodie.findById(req.params.id, function (err, foodie) {
+    foodie.feedback.push(req.body);
+    foodie.save(function (err) {
+      res.redirect(`/foodies/${foodie._id}`);
+    });
+  });
+}
+
 export {
   index,
   newFood as new,
@@ -98,4 +107,5 @@ export {
   edit,
   update,
   deleteTaco as delete,
+  createReview,
 };

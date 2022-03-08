@@ -21,4 +21,45 @@
   <button class="btn" type="submit">Delete this Meal</button>
 </form>
 <% } %>
+<form 
+    id="add-review-form"
+    action="/foodies/<%= foodie._id %>/reviews"
+    method="POST"
+  >
+    <label for="comment-textarea">Comment:</label>
+    <textarea name="comment" id="comment-textarea"></textarea>
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">⭐</option>
+      <option value="2">
+        ⭐⭐
+      </option>
+      <option value="3">
+        ⭐⭐⭐
+      </option>
+      <option value="4">
+        ⭐⭐⭐⭐
+      </option>
+      <option value="5" selected>
+        ⭐⭐⭐⭐⭐
+      </option>
+    </select>
+    <button type="submit">POST</button>
+  </form>
+  <% if (foodie.feedback.length) { %>
+    <table>
+      <thead>
+      </thead>
+      <tbody>
+        <% foodie.feedback.forEach(function(review) { %>
+          <tr>
+            <td><%= review.createdAt.toLocaleDateString() %></td>
+            <td><%= review.comment %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %>
 <%- include('../partials/footer') %>

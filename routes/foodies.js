@@ -10,6 +10,7 @@ router.get("/:id", foodiesCtrl.show);
 router.get("/:id/edit", isLoggedIn, foodiesCtrl.edit);
 
 router.post("/", foodiesCtrl.create);
+router.post("/:id/reviews", foodiesCtrl.createReview);
 
 router.delete("/:id", isLoggedIn, foodiesCtrl.delete);
 
