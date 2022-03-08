@@ -7,6 +7,7 @@
   <nav>  
     <a href="/foodies"><i class="fa-solid fa-house"></i></a>
      <a href="/foodies/new"><i class="fa-solid fa-circle-plus">Add your Meal</i></a>
+     <a href="/profiles"><i class="fa-solid fa-user-group">Foodies</i></a>
       <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %></h4>
       <% if (user?.profile.avatar) { %>
         <div>
