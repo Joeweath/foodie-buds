@@ -2,7 +2,9 @@ import { Foodie } from "../models/foodie.js";
 
 function index(req, res) {
   Foodie.find({})
+    .populate("owner")
     .then((foodies) => {
+      console.log(foodies);
       res.render("foodies/index", {
         foodies,
         title: "Food😋",
