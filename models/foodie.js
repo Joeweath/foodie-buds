@@ -20,7 +20,6 @@ const foodieSchema = new Schema({
     type: String,
     enum: ["Breakfast", "Lunch", "Dinner"],
   },
-  // ingredients: { type: Schema.Types.ObjectId, ref: "Ingredient" },
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   feedback: [feedbackSchema],
 });

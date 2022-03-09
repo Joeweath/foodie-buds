@@ -1,14 +1,16 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const profileSchema = new mongoose.Schema({
-  name: String,
-  avatar: String,
-}, {
-  timestamps: true
-})
+const profileSchema = new mongoose.Schema(
+  {
+    name: String,
+    avatar: String,
+    myfood: [{ type: mongoose.Schema.Types.ObjectId, ref: "Foodie" }],
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Profile = mongoose.model('Profile', profileSchema)
+const Profile = mongoose.model("Profile", profileSchema);
 
-export {
-  Profile
-}
+export { Profile };
