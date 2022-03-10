@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+.log-in {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 200px;
+  width: 40%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  border: 1px solid gray;
+}
+
+.log-in h1 {
+  padding-bottom: 40px;
+  font-family: "Fredoka One";
+  text-shadow: 3px 3px rgb(183, 166, 221);
+  font-weight: 200;
+  color: rgb(34, 34, 34);
+}
+
 .siwg {
   background: url(/images/auth/google/siwg_light_normal.png);
   cursor: pointer;
@@ -8,6 +32,8 @@
 
 .siwg-link {
   display: inline-block;
+  background-color: gray;
+  box-shadow: 4px 4px lightgray;
 }
 
 .siwg:focus,
@@ -40,4 +66,20 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+@media only screen and (max-width: 537px) {
+  .log-in h1 {
+    font-size: 3rem;
+  }
+
+  .log-in {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1010px) {
+  .log-in {
+    /* content: url(/images/homepage/mancooking.jpg); */
+  }
 }

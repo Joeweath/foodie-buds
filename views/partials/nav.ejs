@@ -1,33 +1,37 @@
 <script src="https://kit.fontawesome.com/7ba2214bf9.js" crossorigin="anonymous"></script>
- <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
-</head>
-<body>
-  <nav>  
-    <a href="/foodies"><i class="fa-solid fa-house"></i></a>
-     <a href="/foodies/new"><i class="fa-solid fa-circle-plus">Add your Meal</i></a>
-     <a href="/profiles"><i class="fa-solid fa-user-group">Foodies</i></a>
-      <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %></h4>
-      <% if (user?.profile.avatar) { %>
+    </head>
+
+    <body>
+      <nav>
         <div>
-          <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-            width="40" height="40"
-            
-          />
+
+          <a href="/foodies"><i class="fa-solid fa-house"></i></a>
+          <a href="/foodies/new"><i class="fa-solid fa-circle-plus">Add your Meal</i></a>
+          <a href="/profiles"><i class="fa-solid fa-user-group">Foodies</i></a>
         </div>
-      <% } %>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout 👋</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
-  </nav>
+        <div class="right-nav">
+
+          <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %>
+          </h4>
+          <% if (user?.profile.avatar) { %>
+            <div>
+              <img src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar" width="40" height="40" />
+            </div>
+            <% } %>
+              <% if (user) { %>
+                <a href="/auth/logout">
+                  <button type="submit">Logout 👋</button>
+                </a>
+                <% } else { %>
+                  <a href="/auth/google" class="siwg-link">
+                    <button type="submit" class="siwg">
+                      <img id="siwg-image" alt="Sign in with Google" />
+                    </button>
+                  </a>
+                  <% } %>
+        </div>
+
+      </nav>
