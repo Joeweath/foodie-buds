@@ -17,8 +17,7 @@
 ![EXPRESS.JS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
 ## Wireframes
-
-(https://trello.com/1/cards/62227b2ed864c71983b229cd/attachments/62227b2ed864c71983b229df/previews/62227b2fd864c71983b22a24/download/image.png)
+[![ERD](https://trello.com/1/cards/62227b2ed864c71983b229cd/attachments/62227b2ed864c71983b229df/previews/62227b2fd864c71983b22a24/download/image.png)]
 
 ## Enitity Relationship Diagram 
 [![ERD](https://trello.com/1/cards/6222877c998013888038dc53/attachments/6222877c998013888038dc66/previews/6222877d998013888038dc86/download/image.png)]
