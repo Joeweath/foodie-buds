@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 html {
   box-sizing: border-box;
 }
@@ -32,6 +36,16 @@ nav {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  border-bottom: 2px solid silver;
+}
+
+nav h1 {
+  font-family: "Fredoka One";
+  text-shadow: 3px 3px rgb(183, 166, 221);
+  font-weight: 200;
+  color: rgb(34, 34, 34);
+  font-size: 4rem;
+  margin: 0;
 }
 
 .right-nav {
@@ -53,6 +67,8 @@ nav {
   padding: 40px;
   border-radius: 15px;
   list-style: none;
+  font-size: 1.4rem;
+  font-family: "Old Standard TT", serif;
 }
 
 .meal-section {
@@ -63,6 +79,7 @@ nav {
 .food-details {
   /* padding-top: 20px; */
   padding-bottom: 30px;
+  text-align: center;
 }
 
 h1 {
@@ -72,4 +89,12 @@ h1 {
 .food-img {
   border-radius: 15px;
   border: 1px solid rgb(92, 92, 92);
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.main-avatar {
+  border-radius: 50%;
 }

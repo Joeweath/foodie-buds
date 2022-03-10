@@ -9,7 +9,7 @@
       <% foodies.forEach(food => { %>
         <div class="meal-section">
           <a href="/foodies/<%= food._id %>"><img src="<%= food.meal %>" class="food-img" alt="" width="404" height="404" ></a> 
-        <li class="food-details"><img src="<%= food.owner.avatar %>" alt="" width="20" height="20">  
+        <li class="food-details"><img src="<%= food.owner.avatar %>" alt="" width="20" height="20" class="avatar">  
           <%= food.description %></li>
         </div>
           <% }) %>

@@ -54,7 +54,7 @@
         <% foodie.feedback.forEach(function(review) { %>
           <tr>
             <td><%= review.createdAt.toLocaleDateString() %></td>
-            <td><%= review.comment %></td>
+            <td><%= review.comment %> - <%= review.rating %> </td>
           </tr>
         <% }) %>
       </tbody>

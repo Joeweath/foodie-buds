@@ -12,6 +12,11 @@
     </div>
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (user) { %>
+    <a href="/auth/logout">
+      <button type="submit">Logout 👋</button>
+    </a>
+      <% } %> 
 </main>
 
 <%- include('../partials/footer') %>
