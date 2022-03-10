@@ -2,15 +2,14 @@
 <%- include('../partials/nav') %>
 
 <section class="all-meals-section">
-  <h1>Food!😋</h1>
   
   
     <ul class="meals-list">
       <% foodies.forEach(food => { %>
         <div class="meal-section">
-          <a href="/foodies/<%= food._id %>"><img src="<%= food.meal %>" class="food-img" alt="" width="404" height="404" ></a> 
-        <li class="food-details"><img src="<%= food.owner.avatar %>" alt="" width="20" height="20" class="avatar">  
-          <%= food.description %></li>
+          <a href="/foodies/<%= food._id %>"><img src="<%= food.meal %>" class="food-img" alt="" width="704" height="auto" ></a> 
+        <li class="food-details"><img src="<%= food.owner.avatar %>" alt="" width="40" height="40" class="avatar">  
+         <h3><%= food.description %></h3></li>
         </div>
           <% }) %>
         </ul>

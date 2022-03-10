@@ -6,20 +6,38 @@
 
     <body>
       <nav>
-        <div>
+        <div class="nav-buttons">
           <!-- Home page -->
-          <a href="/foodies/"><i class="bi bi-house-door"></i></a>
-          
+          <!-- 2x size homepage icon -->
+          <a href="/foodies/" class="twox">
+            <i class="bi bi-house-door fa-2x" ></i></a>
+          <!-- 1x size homepage icon -->
+          <a href="/foodies/" class="onex">
+            <i class="bi bi-house-door fa-lg" ></i></a> 
           <!-- Add a meal Page  -->
-          <a href="/foodies/new"><i class="fa-solid fa-circle-plus"></i></a>
+          <!-- 2x size add meal icon -->
+
+          <a href="/foodies/new" class="twox">
+            <i class="bi bi-plus-square fa-2x"></i></a>
+          <!-- 1x size add meal icon -->
+
+          <a href="/foodies/new" class="onex">
+            <i class="bi bi-plus-square fa-lg" ></i></a>
           <!-- All profiles page -->
-          <a href="/profiles"><i class="fa-solid fa-user-group"></i></a>
+          <!-- 2x size profiles icon -->
+
+          <a href="/profiles" class="twox">
+            <i class="bi bi-people fa-2x" ></i></a>
+          <!-- 1x size profiles icon -->
+
+          <a href="/profiles" class="onex">
+            <i class="bi bi-people fa-lg" ></i></a>
         </div>
 
         <h1 class="nav-h1">Foodie Buds</h1>
         <div class="right-nav">
 
-          <h4>Hey, <%= user ? user.profile.name : "Foodie Bud!" %>
+          <h4 class="hey-message">Hey, <%= user ? user.profile.name : "Foodie Bud!" %>
           </h4>
           <% if (user?.profile.avatar) { %>
             <div>

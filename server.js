@@ -8,6 +8,7 @@ import logger from "morgan";
 import methodOverride from "method-override";
 import passport from "passport";
 import { passUserToView } from "./middleware/middleware.js";
+import { passUrlToView } from "./middleware/middleware.js";
 import { router as profileRouter } from "./routes/profiles.js";
 
 // connect to MongoDB with mongoose
@@ -60,6 +61,7 @@ app.use(passport.session());
 
 // custom middleware
 app.use(passUserToView);
+app.use(passUrlToView);
 
 // router middleware
 app.use("/", indexRouter);

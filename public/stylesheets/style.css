@@ -59,6 +59,7 @@ nav h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 40px;
 }
 
 .meals-list {
@@ -74,6 +75,9 @@ nav h1 {
 .meal-section {
   padding: 20px;
   border: 2px solid rgb(118, 96, 131);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .food-details {
@@ -98,3 +102,68 @@ h1 {
 .main-avatar {
   border-radius: 50%;
 }
+
+.nav > a.active {
+  color: black;
+}
+
+.nav-buttons {
+  padding-left: 10px;
+}
+
+.nav-buttons a {
+  padding: 0 5px;
+}
+
+@media only screen and (max-width: 1060px) {
+  .food-img {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 690px) {
+  .food-img {
+    width: 300px;
+  }
+
+  .nav-h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 570.1px) {
+  .onex {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .meals-list {
+    width: 350px;
+  }
+
+  .food-img {
+    width: 250px;
+  }
+
+  .nav-h1 {
+    font-size: 2rem;
+  }
+
+  .hey-message {
+    display: none;
+  }
+
+  .twox {
+    display: none;
+  }
+}
+
+/* @media only screen and (max-width: 690px) {
+  .food-img {
+    width: 300px;
+  }
+
+  .nav-h1 {
+    font-size: 3rem;
+  }
+} */

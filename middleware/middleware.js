@@ -8,4 +8,10 @@ function isLoggedIn(req, res, next) {
   res.redirect("/auth/google");
 }
 
-export { passUserToView, isLoggedIn };
+function passUrlToView(req, res, next) {
+  res.locals.url = req.originalUrl;
+  next();
+  console.log("test url", req.originalUrl);
+}
+
+export { passUserToView, isLoggedIn, passUrlToView };
