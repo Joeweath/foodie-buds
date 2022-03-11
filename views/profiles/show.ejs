@@ -1,22 +1,25 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css">
 
-<main>
-  <% if (profile.avatar) { %>
-    <div>
-      <img 
-        class="profile-avatar"
-        src="<%= profile.avatar %>" 
-        alt="<%= profile.name %> avatar"
-      >
-    </div>
-  <% } %>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
-  <% if (user) { %>
-    <a href="/auth/logout">
-      <button type="submit">Logout 👋</button>
-    </a>
-      <% } %> 
-</main>
+  <%- include('../partials/nav') %>
 
-<%- include('../partials/footer') %>
+    <main>
+      <div class="main-profile">
+        <div class="myprofile">
+          <% if (profile.avatar) { %>
+            <div>
+              <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %> avatar" width="200px"
+                height="auto">
+            </div>
+            <% } %>
+              <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+              <% if (user) { %>
+                <a href="/auth/logout">
+                  <button type="submit" class="logoutbtn">Logout 👋</button>
+                </a>
+                <% } %>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

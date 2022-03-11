@@ -1,65 +1,80 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/foodies/show.css">
+  <%- include('../partials/nav') %>
 
-<section>
-  <h1>Something is smelling GOOD!!</h1>
-  <img src="<%= foodie.meal %>" alt="">
-  <h5><%= foodie.description %></h5>
-  <ul>
-    <li>
-      Directions: <%= foodie.direction%>
-    </li>
-  </ul>
-  <% if (foodie.owner.equals(user?.profile._id)) { %>
-    <form action="/foodies/<%= foodie._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit your meal 🚧</button>
-    </form>
-  <% } %>
-</section>
-<% if (foodie.owner.equals(user?.profile._id)) { %>
-<form action="/foodies/<%= foodie._id %>?_method=DELETE" method="POST">
-  <button class="btn" type="submit">Delete this Meal</button>
-</form>
-<% } %>
-<form 
-    id="add-review-form"
-    action="/foodies/<%= foodie._id %>/reviews"
-    method="POST"
-  >
-    <label for="comment-textarea">Comment:</label>
-    <textarea name="comment" id="comment-textarea"></textarea>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">⭐</option>
-      <option value="2">
-        ⭐⭐
-      </option>
-      <option value="3">
-        ⭐⭐⭐
-      </option>
-      <option value="4">
-        ⭐⭐⭐⭐
-      </option>
-      <option value="5" selected>
-        ⭐⭐⭐⭐⭐
-      </option>
-    </select>
-    <button type="submit">POST</button>
-  </form>
-  <% if (foodie.feedback.length) { %>
-    <table>
-      <thead>
-      </thead>
-      <tbody>
-        <% foodie.feedback.forEach(function(review) { %>
-          <tr>
-            <td><%= review.createdAt.toLocaleDateString() %></td>
-            <td><%= review.comment %> - <%= review.rating %> </td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h3>No Comments Yet</h3>
-  <% } %>
-<%- include('../partials/footer') %>
+    <section id="show-page">
+      <div id="food-section">
+        <img src="<%= foodie.meal %>" alt="" width="500" height="auto">
+        <% if (foodie.owner.equals(user?.profile._id)) { %>
+          <form action="/foodies/<%= foodie._id %>/edit" method="GET">
+            <button class="btn editbtn" type="submit">Edit your meal 🚧</button>
+          </form>
+          <% } %>
+
+            <% if (foodie.owner.equals(user?.profile._id)) { %>
+              <form action="/foodies/<%= foodie._id %>?_method=DELETE" method="POST">
+                <button class="btn deletebtn"  type="submit">Delete this Meal</button>
+              </form>
+              <% } %>
+      </div>
+      <div id="review-section">
+
+
+        <h1>
+          <%= foodie.description %>
+        </h1>
+        <ul>
+          <li>
+            Directions: <%= foodie.direction%>
+          </li>
+        </ul>
+        <div class="show-comments">
+          
+          <% if (foodie.feedback.length) { %>
+            <table>
+              <thead>
+              </thead>
+              <tbody>
+                <% foodie.feedback.forEach(function(review) { %>
+                  <tr>
+                    <td>
+                      <%= review.createdAt.toLocaleDateString() %>
+                    </td>
+                    <td>
+                      <%= review.comment %> - <%= review.rating %>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+              <% } else { %>
+                <h3>No Comments Yet</h3>
+                <% } %>
+              </div>
+                <div class="reviews"> 
+                  <form id="add-review-form" action="/foodies/<%= foodie._id %>/reviews" method="POST">
+                    <label for="comment-textarea"></label>
+                    <textarea name="comment" id="comment-textarea"></textarea>
+                    <label for="rating-select"></label>
+                    <select name="rating" id="rating-select">
+                      <option value="1">⭐</option>
+                      <option value="2">
+                        ⭐⭐   
+                      </option>
+                      <option value="3">
+                        ⭐⭐⭐
+                      </option>
+                    <option value="4">
+                      ⭐⭐⭐⭐
+                    </option>
+                    <option value="5" selected>
+                      ⭐⭐⭐⭐⭐
+                    </option>
+                  </select>
+                </div>
+                <button type="submit" class="review-btn">POST</button>
+              </form>
+
+      </div>
+    </section>
+    <%- include('../partials/footer') %>

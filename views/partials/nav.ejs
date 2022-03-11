@@ -37,8 +37,7 @@
         <h1 class="nav-h1">Foodie Buds</h1>
         <div class="right-nav">
 
-          <h4 class="hey-message">Hey, <%= user ? user.profile.name : "Foodie Bud!" %>
-          </h4>
+          
           <% if (user?.profile.avatar) { %>
             <div>
               <a href="/profiles/<%= user?.profile._id %>">

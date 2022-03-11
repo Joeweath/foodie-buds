@@ -64,7 +64,7 @@ nav h1 {
 
 .meals-list {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgb(118, 96, 131);
+  border: 1px solid rgb(183, 166, 221);
   padding: 40px;
   border-radius: 15px;
   list-style: none;
@@ -74,7 +74,7 @@ nav h1 {
 
 .meal-section {
   padding: 20px;
-  border: 2px solid rgb(118, 96, 131);
+  border: 2px solid rgb(183, 166, 221);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +92,7 @@ h1 {
 
 .food-img {
   border-radius: 15px;
-  border: 1px solid rgb(92, 92, 92);
+  border: 1px solid rgb(183, 166, 221);
 }
 
 .avatar {

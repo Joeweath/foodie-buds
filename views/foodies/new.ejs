@@ -1,21 +1,24 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
-
-<h1>Add your meal!</h1>
-    <form action="/foodies" method="POST">
-      <label>
-        Add a link of the picture of your tasty meal here:
-        <input type="text" name="meal" autocomplete="off">
-      </label>
-      <label>
-        Description:
-        <input type="text" name="description" autocomplete="off">
-      </label>
-      <label>
-        Directions:
-        <input type="text" name="direction" autocomplete="off">
-      </label>
-      <button type="submit">POST</button>
-    </form>
-
+  <link rel="stylesheet" href="/stylesheets/foodies/new.css">
+  <%- include('../partials/nav') %>
+    <div class="add-page">
+      <div class="add-meal-section">
+        <h1 class="add-meal">Add your meal!</h1>
+        <form action="/foodies" method="POST">
+          <label>
+            <h4>Meal Url:</h4>
+            <input type="text" name="meal" autocomplete="off">
+          </label>
+          <label>
+            <h4>Description:</h4>
+            <input type="text" name="description" autocomplete="off">
+          </label>
+          <label>
+            <h4>Directions:</h4>
+            <input type="text" name="direction" autocomplete="off">
+          </label>
+          <button type="submit">POST</button>
+        </form>
+      </div>
+    </div>
     <%- include('../partials/footer') %>

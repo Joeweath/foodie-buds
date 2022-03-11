@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+
+#show-page {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+#food-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#food-section img {
+  border-radius: 15px;
+}
+
+#review-section {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgb(183, 166, 221);
+  border-radius: 15px;
+  list-style: none;
+  font-size: 1.6rem;
+  font-family: "Old Standard TT", serif;
+  height: 80%;
+}
+
+#review-section h1 {
+  text-align: center;
+  color: rgb(183, 166, 221);
+}
+
+.show-comments {
+  text-align: center;
+}
+#add-review-form {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#rating-select {
+  align-self: flex-end;
+}
+
+.review-btn {
+  width: 200px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: rgb(183, 166, 221);
+  color: white;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.deletebtn {
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.editbtn {
+  margin: 10px 0;
+  justify-self: flex-end;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: yellow;
+  color: black;
+  border: 1px solid white;
+  font-weight: bold;
+}
